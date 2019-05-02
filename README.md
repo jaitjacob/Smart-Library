@@ -22,3 +22,6 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
       i. Add books to catalogue.
       ii. Remove books.
       iii. Generate visualization reports.
+
+# Software
+      # Console.

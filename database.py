@@ -47,5 +47,15 @@ class Database:
                             email TEXT NOT NULL UNIQUE, password TEXT NOT NULL)""")
         self.close()
 
+    def find_user(self, username: str):
+        self.check_create_user_table()
 
+        if not self.connected:
+            self.connect()
+
+        self.cursor.execute("""SELECT password FROM user WHERE username = :username""",
+                            {"username": username})
+        for row in self.cursor:
+            print(row)
+        self.close()
 

@@ -15,7 +15,7 @@ class Database:
     def connect(self):
         # Establish a connection to an sqlite database. It file doesn't exist it will be created
         # detect_types is used for mapping python types to database types. Handy but not required
-        self.connection = sqlite3.connect(self.database, detect_types=sqlite3.PARSE_DECLTYPES)
+        self.connection = sqlite3.connect(self.database, check_same_thread=False, detect_types=sqlite3.PARSE_DECLTYPES)
 
         # Store a cursor variable pointing to the sqlite cursor
         self.cursor = self.connection.cursor()
@@ -53,9 +53,14 @@ class Database:
         if not self.connected:
             self.connect()
 
-        self.cursor.execute("""SELECT password FROM user WHERE username = :username""",
+        self.cursor.execute("""SELECT COUNT(username) FROM user WHERE username = :username""",
                             {"username": username})
         for row in self.cursor:
-            print(row)
+            if row[0] == 1:
+                found = True
+            else:
+                found = False
+
         self.close()
 
+        return found

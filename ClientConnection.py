@@ -3,8 +3,14 @@ from socket import socket, AF_INET, SOCK_STREAM
 
 class ClientConnection:
     '''
-    
-    Usage:
+    Description
+    This class returns a connection object that can be used within the "with" context manger to send and receive message
+    to/from the server.
+    Design Pattern: Singleton
+
+    Usage on client side:
+
+    import ClientConnection
     conn = ClientConnection(('127.0.0.1', 64010))
     with conn as s:
     #conn.__enter__() executes: connection open

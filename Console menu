@@ -1,0 +1,45 @@
+from consolemenu import *
+from consolemenu.items import *
+class Menu():
+
+    def_init_(self):
+    self.menu = ConsoleMenu("Smart Library Menu")
+
+    def menu(self):
+        self.add_menuitem("Option 1" + "Search a book")
+        self.add_menuitem("Option 2" + "Search a book")
+        self.add_menuitem("Option 3" + "Search a book")
+        self.add_menuitem("Option 4" + "Logout")
+
+        while True:
+            try:
+                choice = int(input("Choose an option : "))
+                if choice == Option 1
+                #To be completed
+                break
+                elif choice == Option 2:
+                #To be completed
+                break
+                elif choice == Option 3:
+                #To be completed
+                break
+                else:
+                    print("Invalid option. Please try again")
+                    Menu()
+            except ValueError:
+                print("Invalid option. Please Try again")
+                    
+def main ():
+    login ()
+
+def login ():
+    username = "" #Username is from login created
+    password = "" #Password is from login created
+    print ("Username:")
+    UsernameInput = input ()
+    print ("Password:")
+    PasswordInput = input ()
+
+    if UsernameInput == username and PasswordInput == password:
+        print ("Login successful")
+        menu()

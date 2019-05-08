@@ -24,9 +24,10 @@ class Server:
                 print('Connected by', addr)
                 while True:
                     data = conn.recv(1024)
+                    print("Data Received:")
                     print(data.decode())
                     if not data:
-                        break
+                        break    
                     conn.sendall(data)
 
     def print_server_info(self):

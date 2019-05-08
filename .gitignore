@@ -1,3 +1,5 @@
 .idea
 *.db
 .vscode/settings.json
+__pycache__/database.cpython-37.pyc
+__pycache__/authentication.cpython-37.pyc

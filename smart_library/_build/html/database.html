@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Database docs &#8212; smart_library 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to smart_library’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-database">
+<span id="database-docs"></span><h1>Database docs<a class="headerlink" href="#module-database" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="database.Database">
+<em class="property">class </em><code class="descclassname">database.</code><code class="descname">Database</code><a class="headerlink" href="#database.Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Database abstraction class for handling all access to Database.</p>
+<dl class="method">
+<dt id="database.Database.add_user">
+<code class="descname">add_user</code><span class="sig-paren">(</span><em>username: str</em>, <em>firstname: str</em>, <em>lastname: str</em>, <em>email: str</em>, <em>password: str</em><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.add_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will add a user to the database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.check_create_user_table">
+<code class="descname">check_create_user_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.check_create_user_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will check if a user table has been created. If not, create the table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function commits database changes, closes the connection and sets the connection flag to false.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function establishes a connection to an SQLite database. If file doesn’t exist it will be created. Detect_types is used for mapping Python types to database types.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.find_user">
+<code class="descname">find_user</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.find_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function will find a user in the smart library database.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">smart_library</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database docs</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to smart_library’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Luke Clifopoulos.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/database.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

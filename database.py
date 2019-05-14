@@ -47,7 +47,7 @@ class Database:
                             email TEXT NOT NULL UNIQUE, password TEXT NOT NULL)""")
         self.close()
 
-    def find_user(self, username: str):
+    def check_user(self, username: str):
         self.check_create_user_table()
 
         if not self.connected:
@@ -64,3 +64,39 @@ class Database:
         self.close()
 
         return found
+
+    def get_password(self, username: str):
+        self.check_create_user_table()
+
+        if not self.connected:
+            self.connect()
+
+        self.cursor.execute("""SELECT password FROM user WHERE username = :username""",
+                            {"username": username})
+
+        for row in self.cursor:
+            password = row[0]
+
+        self.close()
+
+        return password
+
+    def get_user(self, username: str):
+        self.check_create_user_table()
+
+        if not self.connected:
+            self.connect()
+
+        self.cursor.execute("""SELECT * FROM user WHERE username = :username""",
+                            {"username": username})
+        for row in self.cursor:
+            username = row[0]
+            first_name = row[1]
+            last_name = row[2]
+            email = row[3]
+            password = row[4]
+
+        self.close()
+
+        return username, first_name, last_name, email, password
+

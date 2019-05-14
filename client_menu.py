@@ -34,17 +34,24 @@ class Menu():
 
         self.authentication.create_user(username, firstname, lastname, email, password)
 
-
-
-
     def login(self):
+        attempts = 0
         while True:
+            if attempts == 3:
+                print("Too many failed attempts.")
+                break
             username = input("Username: ")
+            password = input("Password: ")
 
-            if self.authentication.search_user(username):
+            if self.authentication.login(username, password):
+                print("You have successfully logged in")
                 break
             else:
-                print("** Username not found, please try again **")
+                attempts +=1
+                print("Login Invalid!")
+
+
+
 
 
 if __name__ == "__main__":

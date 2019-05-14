@@ -26,6 +26,17 @@ class Menu():
             else:
                 print("** Username already in use, please try again **")
 
+        firstname = input("First name: ")
+        lastname = input("Last name: ")
+        email = input("Email Address: ")
+        password = input("Password: ")
+        print("You have successfully registered")
+
+        self.authentication.create_user(username, firstname, lastname, email, password)
+
+
+
+
     def login(self):
         while True:
             username = input("Username: ")

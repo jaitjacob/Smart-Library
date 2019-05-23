@@ -30,10 +30,10 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
             adding/removing a book.
 
 # Files
-add_event.py	     for google calendar event.
-analytics.py	     data visualisation code.
-authentication.py	     authenticates user login from Reception Pi to Master Pi.
-client_io.py	     pass connection object that can be used for RPi to MPi communcations.
-client_menu.py	     display available options to the user while interacting with the RPi.
-database.py	           Database operations are carried out here.
-server_on_MasterPi.py  Server that is listening to communication from Reception Pi.
+1. add_event.py	     for google calendar event.
+2. analytics.py	     data visualisation code.
+3. authentication.py	     authenticates user login from Reception Pi to Master Pi.
+4. client_io.py	     pass connection object that can be used for RPi to MPi communcations.
+5. client_menu.py	     display available options to the user while interacting with the RPi.
+6. database.py	           Database operations are carried out here.
+7. server_on_MasterPi.py  Server that is listening to communication from Reception Pi.

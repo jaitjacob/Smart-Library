@@ -37,3 +37,10 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
 5. client_menu.py	     display available options to the user while interacting with the RPi.
 6. database.py	           Database operations are carried out here.
 7. server_on_MasterPi.py  Server that is listening to communication from Reception Pi.
+
+
+
+# High Level Architecture Diagram
+
+![alt text](https://github.com/jaitjacob/Smart-Library/blob/master/architecture.JPG)
+

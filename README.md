@@ -24,4 +24,7 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
       iii. Generate visualization reports.
 
 # Software
-      # Console.
+      i. Console Application - This application is basically the communication medium between Reception Pi and Master Pi.
+      ii. Flask Admin Panel - This is for the Librarian in concept with priveleges that a normal library user would not have. Such as
+            adding/removing a book.
+     

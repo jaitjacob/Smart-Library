@@ -24,4 +24,23 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
       iii. Generate visualization reports.
 
 # Software
-      # Console.
+ i.  Console Application - This application is basically the communication medium between Reception Pi and Master Pi.
+ 
+ ii. Flask Admin Panel - This is for the Librarian in concept with priveleges that a normal library user would not have. Such as
+            adding/removing a book.
+
+# Files
+1. add_event.py	     for google calendar event.
+2. analytics.py	     data visualisation code.
+3. authentication.py	     authenticates user login from Reception Pi to Master Pi.
+4. client_io.py	     pass connection object that can be used for RPi to MPi communcations.
+5. client_menu.py	     display available options to the user while interacting with the RPi.
+6. database.py	           Database operations are carried out here.
+7. server_on_MasterPi.py  Server that is listening to communication from Reception Pi.
+
+
+
+# High Level Architecture Diagram
+
+![alt text](https://github.com/jaitjacob/Smart-Library/blob/master/architecture.JPG)
+

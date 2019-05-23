@@ -28,3 +28,12 @@ Master Pi: There's only one admin for simplicity. This Pi runs that website appl
  
  ii. Flask Admin Panel - This is for the Librarian in concept with priveleges that a normal library user would not have. Such as
             adding/removing a book.
+
+# Files
+add_event.py	     for google calendar event.
+analytics.py	     data visualisation code.
+authentication.py	     authenticates user login from Reception Pi to Master Pi.
+client_io.py	     pass connection object that can be used for RPi to MPi communcations.
+client_menu.py	     display available options to the user while interacting with the RPi.
+database.py	           Database operations are carried out here.
+server_on_MasterPi.py  Server that is listening to communication from Reception Pi.

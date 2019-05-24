@@ -1,5 +1,6 @@
 import bcrypt
 from database import Database
+from user import User
 
 
 class Authentication:
@@ -15,3 +16,10 @@ class Authentication:
 
     def search_user(self, username):
         return self.database.check_user(username)
+
+    def get_user(self, get_username):
+        username, first_name, last_name, email, password = self.database.get_user(get_username)
+
+        user = User(username, password, first_name, last_name, email)
+
+        return user

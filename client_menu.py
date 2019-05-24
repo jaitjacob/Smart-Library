@@ -3,23 +3,30 @@
 from consolemenu import *
 from consolemenu.items import *
 from authentication import Authentication
+from user import User
 
 
 class Menu():
     def __init__(self):
         self.authentication = Authentication()
         self.menu = ConsoleMenu("Library Management System", "Reception")
-
+        self.user = None
         function_item_login = FunctionItem("Login", self.login)
+        function_item_faceid = FunctionItem("Face-ID Login", self.faceid)
         function_item_register = FunctionItem("Register", self.register)
         self.menu.append_item(function_item_login)
+        self.menu.append_item(function_item_faceid)
         self.menu.append_item(function_item_register)
 
         self.menu.show()
 
+
     def register(self):
         while True:
-            username = input("Username: ")
+            username = input("Username (or q! to quit): ")
+
+            if username == 'q!':
+                return
 
             if not self.authentication.search_user(username):
                 break
@@ -43,15 +50,19 @@ class Menu():
             username = input("Username: ")
             password = input("Password: ")
 
-            if self.authentication.login(username, password):
-                print("You have successfully logged in")
-                break
+            if self.authentication.search_user(username):
+                if self.authentication.login(username, password):
+                    self.user = self.authentication.get_user(username)
+                    print("Welcome " + self.user.getFirstname())
+                    break
+                else:
+                    attempts += 1
+                    print("Login Invalid!")
             else:
-                attempts +=1
                 print("Login Invalid!")
 
-
-
+    def faceid(self):
+        print("Not yet implemented")
 
 
 if __name__ == "__main__":

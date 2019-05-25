@@ -73,8 +73,12 @@ class Menu():
 
         if username == "Unknown":
             print("Login Failed")
+            return
         else:
             self.user = self.authentication.get_user(username)
+            print(self.user.getFirstname)
+
+
 
 
 if __name__ == "__main__":

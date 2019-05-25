@@ -27,14 +27,17 @@ class CloudDB:
             cursor.execute("SELECT * FROM Book WHERE BookID NOT IN ( "
                            "SELECT DISTINCT BookID FROM BookBorrowed "
                            "WHERE Status='borrowed' ) "
-                           "AND Title LIKE :title "
-                           "AND Author LIKE :author "
-                           "AND Date LIKE :date",
-                           {"title": title, "author": author, "date": date})
+                           "AND Title LIKE %s",
+				('%' + title + '%',))
+            return cursor.fetchall()
+
+    def list_titles(self):
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM Book ")
             return cursor.fetchall()
 
 
 db = CloudDB()
 
-for row in db.search_available("TRANSMISSION", "", ""):
+for row in db.search_available("Transmission", " ", " "):
     print(row)

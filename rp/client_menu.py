@@ -3,7 +3,6 @@
 from consolemenu import *
 from consolemenu.items import *
 from authentication import Authentication
-
 from faceid import FaceID
 
 
@@ -12,6 +11,7 @@ class Menu():
         self.authentication = Authentication()
         self.menu = ConsoleMenu("Library Management System", "Reception")
         self.user = None
+        self.faceid = FaceID()
         function_item_login = FunctionItem("Login", self.login)
         function_item_faceid = FunctionItem("Face-ID Login", self.login_faceid)
         function_item_register = FunctionItem("Register", self.register)
@@ -19,9 +19,10 @@ class Menu():
         self.menu.append_item(function_item_faceid)
         self.menu.append_item(function_item_register)
 
+
         self.menu.show()
 
-        self.faceid = FaceID()
+
 
 
     def register(self):

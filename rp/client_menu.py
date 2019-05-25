@@ -4,6 +4,7 @@ from consolemenu import *
 from consolemenu.items import *
 from authentication import Authentication
 from faceid import FaceID
+from user import User
 
 
 class Menu():

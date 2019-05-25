@@ -126,6 +126,7 @@ class FaceID:
 
         # load the known faces and embeddings
         print("[INFO] loading encodings...")
+        self.data = pickle.loads(open(self.data_file, "rb").read())
 
         # initialize the video stream and then allow the camera sensor to warm up
         print("[INFO] starting video stream...")

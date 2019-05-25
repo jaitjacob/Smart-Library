@@ -76,9 +76,10 @@ class Menu():
             print("Login Failed")
             return
         else:
-            print(username)
             self.user = self.authentication.get_user(username)
-            print(self.user.getFirstname)
+            print(self.user.getFirstname())
+
+
 
 
 

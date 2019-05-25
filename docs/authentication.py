@@ -1,5 +1,5 @@
 import bcrypt
-from database import Database
+from rp.database import Database
 
 
 class Authentication:

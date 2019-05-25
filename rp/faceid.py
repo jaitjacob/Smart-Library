@@ -68,6 +68,8 @@ class FaceID:
 
         cam.release()
 
+        self.encode_images(username)
+
     def encode_images(self, username: str):
         folder = self.data_folder + username
 

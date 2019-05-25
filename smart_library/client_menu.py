@@ -2,7 +2,7 @@
 
 #from consolemenu import *
 #from consolemenu.items import *
-from authentication import Authentication
+from rp.authentication import Authentication
 
 
 class Menu():

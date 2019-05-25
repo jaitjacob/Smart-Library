@@ -3,7 +3,8 @@
 from consolemenu import *
 from consolemenu.items import *
 from authentication import Authentication
-from user import User
+
+from faceid import FaceID
 
 
 class Menu():
@@ -12,13 +13,15 @@ class Menu():
         self.menu = ConsoleMenu("Library Management System", "Reception")
         self.user = None
         function_item_login = FunctionItem("Login", self.login)
-        function_item_faceid = FunctionItem("Face-ID Login", self.faceid)
+        function_item_faceid = FunctionItem("Face-ID Login", self.login_faceid)
         function_item_register = FunctionItem("Register", self.register)
         self.menu.append_item(function_item_login)
         self.menu.append_item(function_item_faceid)
         self.menu.append_item(function_item_register)
 
         self.menu.show()
+
+        self.faceid = FaceID()
 
 
     def register(self):
@@ -37,6 +40,9 @@ class Menu():
         lastname = input("Last name: ")
         email = input("Email Address: ")
         password = input("Password: ")
+
+        self.faceid.register_user(username)
+
         print("You have successfully registered")
 
         self.authentication.create_user(username, firstname, lastname, email, password)
@@ -61,8 +67,13 @@ class Menu():
             else:
                 print("Login Invalid!")
 
-    def faceid(self):
-        print("Not yet implemented")
+    def login_faceid(self):
+        username = self.faceid.recognize_user()
+
+        if username == "Unknown":
+            print("Login Failed")
+        else
+            self.user = self.authentication.get_user(username)
 
 
 if __name__ == "__main__":

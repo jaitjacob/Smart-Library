@@ -15,7 +15,7 @@ class FaceID:
     def __init__(self):
         self.data_folder = "./Face-ID/dataset/"
         self.data_file = self.data_folder + "encodings.pickle"
-        self.data = pickle.loads(open(self.data_file, "rb").read())
+        self.data = None
 
         self.detection_method = "hog"
 
@@ -77,9 +77,18 @@ class FaceID:
         print("[INFO] quantifying faces...")
         imagePaths = list(paths.list_images(folder))
 
-        # initialize the list of known encodings and known names
-        knownEncodings = self.data["encodings"]
-        knownNames = self.data["names"]
+        exists = os.path.isfile(self.data_file)
+
+        if exists:
+            self.data = pickle.loads(open(self.data_file, "rb").read())
+            # initialize the list of known encodings and known names
+            knownEncodings = self.data["encodings"]
+            knownNames = self.data["names"]
+
+        else:
+            knownEncodings = []
+            knownNames = []
+
 
         # loop over the image paths
         for (i, imagePath) in enumerate(imagePaths):

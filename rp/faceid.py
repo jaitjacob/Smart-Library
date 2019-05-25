@@ -15,7 +15,7 @@ class FaceID:
     def __init__(self):
         self.data_folder = "./Face-ID/dataset/"
         self.data_file = self.data_folder + "encodings.pickle"
-        self.data = pickle.loads(open(self.encodings_file, "rb").read())
+        self.data = pickle.loads(open(self.data_file, "rb").read())
 
         self.detection_method = "hog"
 

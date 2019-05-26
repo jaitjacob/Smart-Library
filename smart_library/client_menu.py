@@ -45,6 +45,19 @@ class Menu():
             else:
                 print("** Username not found, please try again **")
 
+    def login_faceid(self):
+        """
+        This function handles the login of a user via facial identification.
+        """
+        username = self.faceid.recognize_user()
+
+        if username == "Unknown":
+            print("Login Failed")
+            return
+        else:
+            self.user = self.authentication.get_user(username)
+            print(self.user.getFirstname())
+
 
 if __name__ == "__main__":
     reception = Menu()

@@ -1,5 +1,5 @@
-Database Docs
-=============
+Database Docs (RP)
+==================
 
 .. module:: database
 

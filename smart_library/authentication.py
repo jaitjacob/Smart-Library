@@ -1,6 +1,6 @@
-import bcrypt
+#import bcrypt
 #from rp.database import Database
-
+#from user import User
 
 class Authentication:
     """
@@ -25,6 +25,16 @@ class Authentication:
         of the username, firstname, lastname, email and password that the user enters.
         """
         self.database.add_user(username, firstname, lastname, email, bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt(12)))
+
+    def get_user(self, get_username):
+        """
+        This function handles getting and returning a user via their unique username on the system.
+        """
+        username, first_name, last_name, email, password = self.database.get_user(get_username)
+
+        user = User(username, password, first_name, last_name, email)
+
+        return user
 
     def search_user(self, username):
         """

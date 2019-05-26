@@ -73,6 +73,7 @@ class CloudDB:
             return cursor.rowcount == 1
 
     def return_book(self, bookid: int):
+        """Return a book with a certain book ID that is passed through as an argument."""
         returndate = datetime.today()
 
         with self.connection.cursor() as cursor:
@@ -84,6 +85,7 @@ class CloudDB:
             return cursor.rowcount == 1
 
     def add_lmsuser(self, username: str, name: str):
+        """Add a 
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO LmsUser (UserName, Name) "
                            "VALUES (%s, %s)", (username, name))

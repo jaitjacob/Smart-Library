@@ -46,6 +46,12 @@ class CloudDB:
             cursor.execute("SELECT * FROM Book ")
             return cursor.fetchall()
 
+    def get_book(self, bookid: int):
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM Book "
+                           "WHERE BookID = %s", (bookid, ))
+            return cursor.fetchall()
+
     def borrow_book(self, userid: int, bookid: int ):
         # Return the book in case it was already borrowed and hadn't been properly returned
         self.return_book(bookid)

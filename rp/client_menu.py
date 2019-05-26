@@ -8,6 +8,9 @@ from user import User
 
 
 class Menu:
+    """
+    
+    """
     def __init__(self):
         self.authentication = Authentication()
         self.menu = ConsoleMenu("Library Management System", "Reception")

@@ -19,7 +19,9 @@ Welcome to smart_library's documentation!
    clouddb
    database
    faceid
-   server_on_MasterPi
+   server
+   server_menu
+   server_user
 
 
 

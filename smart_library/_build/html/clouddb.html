@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>CloudDB Docs &#8212; smart_library 0.1 documentation</title>
+    <title>CloudDB Docs (MP) &#8212; smart_library 0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -33,11 +33,17 @@
           <div class="body" role="main">
             
   <div class="section" id="module-clouddb">
-<span id="clouddb-docs"></span><h1>CloudDB Docs<a class="headerlink" href="#module-clouddb" title="Permalink to this headline">¶</a></h1>
+<span id="clouddb-docs-mp"></span><h1>CloudDB Docs (MP)<a class="headerlink" href="#module-clouddb" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="clouddb.CloudDB">
 <em class="property">class </em><code class="descclassname">clouddb.</code><code class="descname">CloudDB</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class handles the actions that take place in the Google Cloud Database.</p>
+<dl class="method">
+<dt id="clouddb.CloudDB.add_lmsuser">
+<code class="descname">add_lmsuser</code><span class="sig-paren">(</span><em>username: str</em>, <em>name: str</em><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB.add_lmsuser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a library user that takes the arguments of username for user when they are logged in, and their actual name.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="clouddb.CloudDB.borrow_book">
 <code class="descname">borrow_book</code><span class="sig-paren">(</span><em>userid: int</em>, <em>bookid: int</em><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB.borrow_book" title="Permalink to this definition">¶</a></dt>
@@ -63,9 +69,21 @@
 </dd></dl>
 
 <dl class="method">
+<dt id="clouddb.CloudDB.get_lmsuser">
+<code class="descname">get_lmsuser</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB.get_lmsuser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a library user that takes the argument of username for user when they are logged in.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="clouddb.CloudDB.list_titles">
 <code class="descname">list_titles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB.list_titles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists all titles via an SQL query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="clouddb.CloudDB.return_book">
+<code class="descname">return_book</code><span class="sig-paren">(</span><em>bookid: int</em><span class="sig-paren">)</span><a class="headerlink" href="#clouddb.CloudDB.return_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a book with a certain book ID that is passed through as an argument.</p>
 </dd></dl>
 
 <dl class="method">
@@ -98,15 +116,18 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book.html">Book Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calendar.html">Calendar Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book.html">Book Docs (MP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calendar.html">Calendar Docs (MP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_io.html">Client IO Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClientConnection.html">ClientConnection Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_menu.html">Client Menu Docs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CloudDB Docs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CloudDB Docs (MP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faceid.html">Face ID Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_menu.html">Server Menu Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server_on_MasterPi.html">Server On Master Pi Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Server User Docs</a></li>
 </ul>
 
 <div class="relations">

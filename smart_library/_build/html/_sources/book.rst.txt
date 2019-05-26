@@ -1,5 +1,5 @@
-Book Docs
-=========
+Book Docs (MP)
+==============
 
 .. module:: book
 

@@ -45,7 +45,6 @@
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#Y"><strong>Y</strong></a>
@@ -54,6 +53,8 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="clouddb.html#clouddb.CloudDB.add_lmsuser">add_lmsuser() (clouddb.CloudDB method)</a>
+</li>
       <li><a href="database.html#database.Database.add_user">add_user() (database.Database method)</a>
 </li>
   </ul></td>
@@ -70,12 +71,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="book.html#book.Book">Book (class in book)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="book.html#module-book">book (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clouddb.html#clouddb.CloudDB.borrow_book">borrow_book() (clouddb.CloudDB method)</a>
+
+      <ul>
+        <li><a href="server.html#server.Server.borrow_book">(server.Server method)</a>
 </li>
+        <li><a href="server_menu.html#server_menu.ServerMenu.borrow_book">(server_menu.ServerMenu method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -150,12 +157,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="faceid.html#faceid.FaceID">FaceID (class in faceid)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="faceid.html#module-faceid">faceid (module)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="database.html#database.Database.find_user">find_user() (database.Database method)</a>
+
+      <ul>
+        <li><a href="server.html#server.Server.find_user">(server.Server method)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -165,16 +176,30 @@
       <li><a href="book.html#book.Book.get_author">get_author() (book.Book method)</a>
 </li>
       <li><a href="clouddb.html#clouddb.CloudDB.get_book">get_book() (clouddb.CloudDB method)</a>
+
+      <ul>
+        <li><a href="server.html#server.Server.get_book">(server.Server method)</a>
 </li>
+      </ul></li>
       <li><a href="book.html#book.Book.get_bookid">get_bookid() (book.Book method)</a>
+</li>
+      <li><a href="clouddb.html#clouddb.CloudDB.get_lmsuser">get_lmsuser() (clouddb.CloudDB method)</a>
+</li>
+      <li><a href="server_user.html#server_user.ServerUser.get_lmsuserid">get_lmsuserid() (server_user.ServerUser method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="server_user.html#server_user.ServerUser.get_name">get_name() (server_user.ServerUser method)</a>
+</li>
       <li><a href="database.html#database.Database.get_password">get_password() (database.Database method)</a>
 </li>
       <li><a href="book.html#book.Book.get_publisheddate">get_publisheddate() (book.Book method)</a>
 </li>
       <li><a href="book.html#book.Book.get_title">get_title() (book.Book method)</a>
+</li>
+      <li><a href="server.html#server.Server.get_user">get_user() (server.Server method)</a>
+</li>
+      <li><a href="server_user.html#server_user.ServerUser.get_username">get_username() (server_user.ServerUser method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -204,14 +229,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clouddb.html#clouddb.CloudDB.list_titles">list_titles() (clouddb.CloudDB method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="authentication.html#authentication.Authentication.login">login() (authentication.Authentication method)</a>
 
       <ul>
         <li><a href="client_menu.html#client_menu.Menu.login">(client_menu.Menu method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="server_menu.html#server_menu.ServerMenu.logout">logout() (server_menu.ServerMenu method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -231,25 +258,25 @@
   </ul></td>
 </tr></table>
 
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="server_on_MasterPi.html#server_on_MasterPi.Server.print_server_info">print_server_info() (server_on_MasterPi.Server method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="faceid.html#faceid.FaceID.recognize_user">recognize_user() (faceid.FaceID method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="client_menu.html#client_menu.Menu.register">register() (client_menu.Menu method)</a>
 </li>
       <li><a href="faceid.html#faceid.FaceID.register_user">register_user() (faceid.FaceID method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="clouddb.html#clouddb.CloudDB.return_book">return_book() (clouddb.CloudDB method)</a>
+
+      <ul>
+        <li><a href="server.html#server.Server.return_book">(server.Server method)</a>
+</li>
+        <li><a href="server_menu.html#server_menu.ServerMenu.return_book">(server_menu.ServerMenu method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -258,17 +285,29 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clouddb.html#clouddb.CloudDB.search_available">search_available() (clouddb.CloudDB method)</a>
 </li>
+      <li><a href="server.html#server.Server.search_book">search_book() (server.Server method)</a>
+
+      <ul>
+        <li><a href="server_menu.html#server_menu.ServerMenu.search_book">(server_menu.ServerMenu method)</a>
+</li>
+      </ul></li>
       <li><a href="authentication.html#authentication.Authentication.search_user">search_user() (authentication.Authentication method)</a>
 </li>
       <li><a href="client_io.html#client_io.Client.sending_data">sending_data() (client_io.Client method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="server_on_MasterPi.html#server_on_MasterPi.Server">Server (class in server_on_MasterPi)</a>
+      <li><a href="server.html#server.Server">Server (class in server)</a>
 </li>
-      <li><a href="server_on_MasterPi.html#server_on_MasterPi.Server.server_listening">server_listening() (server_on_MasterPi.Server method)</a>
+      <li><a href="server.html#module-server">server (module)</a>
 </li>
-      <li><a href="server_on_MasterPi.html#module-server_on_MasterPi">server_on_MasterPi (module)</a>
+      <li><a href="server_menu.html#module-server_menu">server_menu (module)</a>
+</li>
+      <li><a href="server_user.html#module-server_user">server_user (module)</a>
+</li>
+      <li><a href="server_menu.html#server_menu.ServerMenu">ServerMenu (class in server_menu)</a>
+</li>
+      <li><a href="server_user.html#server_user.ServerUser">ServerUser (class in server_user)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -308,15 +347,17 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="book.html">Book Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calendar.html">Calendar Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book.html">Book Docs (MP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calendar.html">Calendar Docs (MP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_io.html">Client IO Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClientConnection.html">ClientConnection Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_menu.html">Client Menu Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clouddb.html">CloudDB Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clouddb.html">CloudDB Docs (MP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faceid.html">Face ID Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server_on_MasterPi.html">Server On Master Pi Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server Docs (MP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_menu.html">Server Menu Docs (MP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_user.html">Server User Docs (MP)</a></li>
 </ul>
 
 <div class="relations">

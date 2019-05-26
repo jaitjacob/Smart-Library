@@ -85,7 +85,7 @@ class CloudDB:
             return cursor.rowcount == 1
 
     def add_lmsuser(self, username: str, name: str):
-        """Add a 
+        """Add a library user that takes the arguments of username for user when they are logged in, and their actual name.""" 
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO LmsUser (UserName, Name) "
                            "VALUES (%s, %s)", (username, name))
@@ -94,6 +94,7 @@ class CloudDB:
             return cursor.rowcount == 1
 
     def get_lmsuser(self, username):
+        """Get a library user that takes the argument of username for user when they are logged in."""
         with self.connection.cursor() as cursor:
             cursor.execute("SELECT * FROM LmsUser "
                            "WHERE UserName = %s", (username, ))

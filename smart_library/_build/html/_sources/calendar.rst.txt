@@ -1,5 +1,5 @@
-Calendar Docs
-=============
+Calendar Docs (MP)
+==================
 
 .. module:: calendar
 

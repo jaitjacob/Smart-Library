@@ -7,7 +7,7 @@ from faceid import FaceID
 from user import User
 
 
-class Menu():
+class Menu:
     def __init__(self):
         self.authentication = Authentication()
         self.menu = ConsoleMenu("Library Management System", "Reception")
@@ -19,7 +19,6 @@ class Menu():
         self.menu.append_item(function_item_login)
         self.menu.append_item(function_item_faceid)
         self.menu.append_item(function_item_register)
-
 
         self.menu.show()
 

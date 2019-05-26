@@ -1,5 +1,5 @@
 import bcrypt
-from rp.database import Database
+#from rp.database import Database
 
 
 class Authentication:
@@ -14,19 +14,21 @@ class Authentication:
 
     def login(self, username: str, password: str):
         """
-        This function handles the user logging into the system.
+        This function handles the user logging into the system, taking in the arguments
+        of the user's username and their password.
         """
         self.database.find_user(username)
 
     def create_user(self, username: str, firstname: str, lastname: str, email: str, password: str):
         """
-        This function handles the creation of a new user of the system.
+        This function handles the creation of a new user of the system, taking in the arguments
+        of the username, firstname, lastname, email and password that the user enters.
         """
         self.database.add_user(username, firstname, lastname, email, bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt(12)))
 
     def search_user(self, username):
         """
-        This function handles the finding of a user within the database, who
+        This function handles finding a user within the database, who
         has already registered with the system previously.
         """
         return self.database.find_user(username)

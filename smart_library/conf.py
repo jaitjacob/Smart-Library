@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 project = 'smart_library'
 copyright = '2019, Luke Clifopoulos'
-author = 'Luke Clifopoulos'
+author = 'Luke Clifopoulos, Yazeed Othman, Jait Jacob, Brian Han'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'

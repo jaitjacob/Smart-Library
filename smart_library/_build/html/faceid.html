@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Authentication Docs &#8212; smart_library 0.1 documentation</title>
+    <title>Face ID Docs &#8212; smart_library 0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Client IO Docs" href="client_io.html" />
-    <link rel="prev" title="Welcome to smart_library’s documentation!" href="index.html" />
+    <link rel="next" title="Server On Master Pi Docs" href="server_on_MasterPi.html" />
+    <link rel="prev" title="Database Docs" href="database.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,31 +32,31 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="module-authentication">
-<span id="authentication-docs"></span><h1>Authentication Docs<a class="headerlink" href="#module-authentication" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-faceid">
+<span id="face-id-docs"></span><h1>Face ID Docs<a class="headerlink" href="#module-faceid" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="authentication.Authentication">
-<em class="property">class </em><code class="descclassname">authentication.</code><code class="descname">Authentication</code><a class="headerlink" href="#authentication.Authentication" title="Permalink to this definition">¶</a></dt>
-<dd><p>Authentication class handles clients logging into the system and gaining access to the application.</p>
+<dt id="faceid.FaceID">
+<em class="property">class </em><code class="descclassname">faceid.</code><code class="descname">FaceID</code><a class="headerlink" href="#faceid.FaceID" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class handles the creation, encoding and recognization of user images.</p>
 <dl class="method">
-<dt id="authentication.Authentication.create_user">
-<code class="descname">create_user</code><span class="sig-paren">(</span><em>username: str</em>, <em>firstname: str</em>, <em>lastname: str</em>, <em>email: str</em>, <em>password: str</em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.Authentication.create_user" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function handles the creation of a new user of the system, taking in the arguments
-of the username, firstname, lastname, email and password that the user enters.</p>
+<dt id="faceid.FaceID.encode_images">
+<code class="descname">encode_images</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#faceid.FaceID.encode_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will extract the embeddings from the faces in the photos taken and stored before. An
+encodings.pickle file will be generated at the conclusion of this method. The username is taken as an argument
+to locate the exact folder of images that are to be encoded.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="authentication.Authentication.login">
-<code class="descname">login</code><span class="sig-paren">(</span><em>username: str</em>, <em>password: str</em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.Authentication.login" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function handles the user logging into the system, taking in the arguments
-of the user’s username and their password.</p>
+<dt id="faceid.FaceID.recognize_user">
+<code class="descname">recognize_user</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#faceid.FaceID.recognize_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will loop over the known faces and embeddings, and look to identify that user in real time.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="authentication.Authentication.search_user">
-<code class="descname">search_user</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#authentication.Authentication.search_user" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function handles finding a user within the database, who
-has already registered with the system previously.</p>
+<dt id="faceid.FaceID.register_user">
+<code class="descname">register_user</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#faceid.FaceID.register_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will register a user by firstly creating a unique folder under their username (taken as an argument) they choose to be idenitified
+as while using the application, then followed by their pictures being taken via the webcam to be stored in that folder.</p>
 </dd></dl>
 
 </dd></dl>
@@ -82,12 +82,12 @@ has already registered with the system previously.</p>
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Authentication Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_io.html">Client IO Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ClientConnection.html">ClientConnection Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client_menu.html">Client Menu Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database Docs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faceid.html">Face ID Docs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Face ID Docs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server_on_MasterPi.html">Server On Master Pi Docs</a></li>
 </ul>
 
@@ -95,8 +95,8 @@ has already registered with the system previously.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to smart_library’s documentation!</a></li>
-      <li>Next: <a href="client_io.html" title="next chapter">Client IO Docs</a></li>
+      <li>Previous: <a href="database.html" title="previous chapter">Database Docs</a></li>
+      <li>Next: <a href="server_on_MasterPi.html" title="next chapter">Server On Master Pi Docs</a></li>
   </ul></li>
 </ul>
 </div>
@@ -123,14 +123,14 @@ has already registered with the system previously.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Luke Clifopoulos.
+      &copy;2019, Luke Clifopoulos, Yazeed Othman, Jait Jacob, Brian Han.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/authentication.rst.txt"
+      <a href="_sources/faceid.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -2,12 +2,12 @@
 
 #from consolemenu import *
 #from consolemenu.items import *
-from rp.authentication import Authentication
+#from rp.authentication import Authentication
 
 
 class Menu():
     """
-    Client menu class that handles the login and register of users.
+    Client menu class that handles the login and registration of users.
     """
     def __init__(self):
         self.authentication = Authentication()
@@ -34,7 +34,8 @@ class Menu():
 
     def login(self):
         """
-        This function handles the login of a user, via authenticating their unique username.
+        This function handles the login of a user, via authenticating their unique username that has previously been
+        stored from the time they registered.
         """
         while True:
             username = input("Username: ")

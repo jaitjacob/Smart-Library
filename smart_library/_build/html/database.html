@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Database docs &#8212; smart_library 0.1 documentation</title>
+    <title>Database Docs &#8212; smart_library 0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,7 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to smart_library’s documentation!" href="index.html" />
+    <link rel="next" title="Server On Master Pi Docs" href="server_on_MasterPi.html" />
+    <link rel="prev" title="Client Menu Docs" href="client_menu.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,7 +33,7 @@
           <div class="body" role="main">
             
   <div class="section" id="module-database">
-<span id="database-docs"></span><h1>Database docs<a class="headerlink" href="#module-database" title="Permalink to this headline">¶</a></h1>
+<span id="database-docs"></span><h1>Database Docs<a class="headerlink" href="#module-database" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="database.Database">
 <em class="property">class </em><code class="descclassname">database.</code><code class="descname">Database</code><a class="headerlink" href="#database.Database" title="Permalink to this definition">¶</a></dt>
@@ -47,6 +48,14 @@
 <dt id="database.Database.check_create_user_table">
 <code class="descname">check_create_user_table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.check_create_user_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will check if a user table has been created. If not, create the table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.check_user">
+<code class="descname">check_user</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.check_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function gets and checks if a certain username
+exists in the User table, before they are 
+connected.</p>
 </dd></dl>
 
 <dl class="method">
@@ -65,6 +74,14 @@
 <dt id="database.Database.find_user">
 <code class="descname">find_user</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.find_user" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function will find a user in the smart library database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="database.Database.get_password">
+<code class="descname">get_password</code><span class="sig-paren">(</span><em>username: str</em><span class="sig-paren">)</span><a class="headerlink" href="#database.Database.get_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function gets the password for
+a specific user from the User
+table.</p>
 </dd></dl>
 
 </dd></dl>
@@ -90,14 +107,21 @@
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Database docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_io.html">Client IO Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClientConnection.html">ClientConnection Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_menu.html">Client Menu Docs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faceid.html">Face ID Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_on_MasterPi.html">Server On Master Pi Docs</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to smart_library’s documentation!</a></li>
+      <li>Previous: <a href="client_menu.html" title="previous chapter">Client Menu Docs</a></li>
+      <li>Next: <a href="server_on_MasterPi.html" title="next chapter">Server On Master Pi Docs</a></li>
   </ul></li>
 </ul>
 </div>
@@ -124,7 +148,7 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Luke Clifopoulos.
+      &copy;2019, Luke Clifopoulos, Yazeed Othman, Jait Jacob, Brian Han.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>

@@ -1,4 +1,4 @@
-Database docs
+Database Docs
 =============
 
 .. module:: database

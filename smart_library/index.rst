@@ -15,6 +15,8 @@ Welcome to smart_library's documentation!
    ClientConnection
    client_menu
    database
+   faceid
+   server_on_MasterPi
 
 
 

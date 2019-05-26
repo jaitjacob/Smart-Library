@@ -1,0 +1,7 @@
+Add Event Docs
+==============
+
+.. module:: add_event 
+
+.. autoclass:: Add_Event
+    :members:

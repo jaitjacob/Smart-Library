@@ -62,6 +62,51 @@ class Database:
                             first_name TEXT NOT NULL, last_name TEXT NOT NULL, 
                             email TEXT NOT NULL UNIQUE, password TEXT NOT NULL)""")
         self.close()
+    
+    def check_user(self, username: str):
+        """
+        This function gets and checks if a certain username
+        exists in the User table, before they are 
+        connected.
+        """
+        self.check_create_user_table()
+
+        if not self.connected:
+            self.connect()
+
+        self.cursor.execute("""SELECT COUNT(username) FROM user WHERE username = :username""",
+                             {"username": username})
+
+        for row in self.cursor:
+            if row[0] == 1:
+                found = True
+            else:
+                found = False
+
+        self.close()
+
+        return found
+
+    def get_password(self, username: str):
+        """
+        This function gets the password for
+        a specific user from the User
+        table.
+        """
+        self.check_create_user_table()
+
+        if not self.connected:
+            self.connect()
+
+        self.cursor.execute("""SELECT password FROM user WHERE username = :username""",
+                            {"username": username})
+
+        for row in self.cursor:
+            password = row[0]
+
+        self.close()
+
+        return password
 
     def find_user(self, username: str):
         """

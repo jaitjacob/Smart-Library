@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Book Docs (MP) &#8212; smart_library 0.1 documentation</title>
+    <title>User Docs (RP) &#8212; smart_library 0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Calendar Docs (MP)" href="calendar.html" />
-    <link rel="prev" title="Authentication Docs" href="authentication.html" />
+    <link rel="prev" title="Server User Docs (MP)" href="server_user.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -32,34 +31,42 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="module-book">
-<span id="book-docs-mp"></span><h1>Book Docs (MP)<a class="headerlink" href="#module-book" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-user">
+<span id="user-docs-rp"></span><h1>User Docs (RP)<a class="headerlink" href="#module-user" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="book.Book">
-<em class="property">class </em><code class="descclassname">book.</code><code class="descname">Book</code><span class="sig-paren">(</span><em>bookid: int</em>, <em>title: str</em>, <em>author: str</em>, <em>publisheddate: str</em><span class="sig-paren">)</span><a class="headerlink" href="#book.Book" title="Permalink to this definition">¶</a></dt>
-<dd><p>This class defines a Book object.</p>
+<dt id="user.User">
+<em class="property">class </em><code class="descclassname">user.</code><code class="descname">User</code><span class="sig-paren">(</span><em>username: str</em>, <em>password: str</em>, <em>firstname: str</em>, <em>lastname: str</em>, <em>email: str</em><span class="sig-paren">)</span><a class="headerlink" href="#user.User" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class refers simply to the details of a user. The arguments taken
+for this class include the user’s username, password, firstname, lastname
+and email.</p>
 <dl class="method">
-<dt id="book.Book.get_author">
-<code class="descname">get_author</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#book.Book.get_author" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method grabs and returns the author of a book.</p>
+<dt id="user.User.getEmail">
+<code class="descname">getEmail</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user.User.getEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return the email of a user.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="book.Book.get_bookid">
-<code class="descname">get_bookid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#book.Book.get_bookid" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method grabs and returns the unique ID of a book.</p>
+<dt id="user.User.getFirstname">
+<code class="descname">getFirstname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user.User.getFirstname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return the firstname of a user.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="book.Book.get_publisheddate">
-<code class="descname">get_publisheddate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#book.Book.get_publisheddate" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method grabs and returns the published data of a book.</p>
+<dt id="user.User.getLastname">
+<code class="descname">getLastname</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user.User.getLastname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return the lastname of a user.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="book.Book.get_title">
-<code class="descname">get_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#book.Book.get_title" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method grabs and returns the title of a book.</p>
+<dt id="user.User.getPassword">
+<code class="descname">getPassword</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user.User.getPassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return the password of a user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="user.User.getUsername">
+<code class="descname">getUsername</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#user.User.getUsername" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get and return the username of a user.</p>
 </dd></dl>
 
 </dd></dl>
@@ -104,8 +111,7 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="authentication.html" title="previous chapter">Authentication Docs</a></li>
-      <li>Next: <a href="calendar.html" title="next chapter">Calendar Docs (MP)</a></li>
+      <li>Previous: <a href="server_user.html" title="previous chapter">Server User Docs (MP)</a></li>
   </ul></li>
 </ul>
 </div>
@@ -133,13 +139,13 @@
     </div>
     <div class="footer">
       &copy;2019, Luke Clifopoulos, Yazeed Othman, Jait Jacob, Brian Han.
-      
+
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="_sources/book.rst.txt"
+      <a href="_sources/user.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

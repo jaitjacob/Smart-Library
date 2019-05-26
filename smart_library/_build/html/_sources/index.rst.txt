@@ -22,6 +22,7 @@ Welcome to smart_library's documentation!
    server
    server_menu
    server_user
+   user
 
 
 

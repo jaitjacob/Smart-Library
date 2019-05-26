@@ -1,6 +1,6 @@
 from clouddb import CloudDB
 from server_user import ServerUser
-from calendar import Calendar
+from library_calendar import LibraryCalendar
 from book import Book
 
 
@@ -8,7 +8,7 @@ class Server:
     def __init__(self, username: str):
         self.clouddb = CloudDB()
         self.user = self.find_user(username)
-        self.calendar = Calendar()
+        self.libcalendar = LibraryCalendar()
 
     def find_user(self, username: str):
         rows = self.clouddb.get_lmsuser(username)
@@ -41,7 +41,7 @@ class Server:
         if self.clouddb.check_book(bookid):
             book = self.get_book(bookid)
             self.clouddb.borrow_book(self.user.get_lmsuserid(), bookid)
-            self.calendar.insert(self.user.get_lmsuserid(), book.get_bookid(), book.get_title(), book.get_author())
+            self.libcalendar.insert(self.user.get_lmsuserid(), book.get_bookid(), book.get_title(), book.get_author())
             return True
         else:
             return False

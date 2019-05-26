@@ -15,7 +15,7 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 import argparse
 
-class Calendar:
+class LibraryCalendar:
     def __init__(self):
         parser = argparse.ArgumentParser(parents=[tools.argparser])
         flags = parser.parse_args(['--noauth_local_webserver'])

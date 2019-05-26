@@ -13,8 +13,6 @@ Welcome to smart_library's documentation!
    authentication
    book
    calendar
-   client_io
-   ClientConnection
    client_menu
    clouddb
    database

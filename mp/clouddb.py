@@ -71,14 +71,14 @@ class CloudDB:
 
     def get_lmsuser(self, username):
         with self.connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM Book "
-                           "WHERE UserName = %s", (username))
+            cursor.execute("SELECT * FROM LmsUser "
+                           "WHERE UserName = %s", (username, ))
             return cursor.fetchall()
 
 
 db = CloudDB()
 
-db.add_lmsuser("bhan", "Brian")
+#db.add_lmsuser("bhan", "Brian")
 
 for row in db.get_lmsuser("bhan"):
     print(row)

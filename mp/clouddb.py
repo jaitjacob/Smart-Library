@@ -61,12 +61,24 @@ class CloudDB:
 
             return cursor.rowcount == 1
 
+    def add_lmsuser(self, username: str, name: str):
+        with self.connection.cursor() as cursor:
+            cursor.execute("INSERT INTO LmsUser (UserName, Name "
+                           "VALUES (%s, %s)", (username, name))
+            self.connection.commit()
 
+            return cursor.rowcount == 1
+
+    def get_lmsuser(self, username):
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM Book "
+                           "WHERE UserName = %s", (username))
+            return cursor.fetchall()
 
 
 db = CloudDB()
 
-db.borrow_book(1, 371)
+db.add_lmsuser("bhan", "Brian")
 
-for row in db.search_available("", ""):
+for row in db.get_lmsuser("bhan"):
     print(row)

@@ -31,8 +31,17 @@ class Server:
         return bookids, titles, authors, publisheddates
 
     def borrow_book(self, bookid: int):
+        # Check if the book is available to borrow
         if self.clouddb.check_book(bookid):
             self.clouddb.borrow_book(self.user.get_lmsuserid(), bookid)
             return True
         else:
             return False
+
+    def return_book(self, bookid: int):
+        # Check if the book is available to borrow, if so, it cannot be returned
+        if self.clouddb.check_book(bookid):
+            return False
+        else:
+            self.clouddb.return_book(bookid)
+            return True

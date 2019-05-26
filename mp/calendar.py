@@ -22,7 +22,7 @@ class Calendar:
         self.creds = self.store.get()
         if(not self.creds or self.creds.invalid):
             flow = client.flow_from_clientsecrets("credentials.json", self.SCOPES)
-            self.creds = tools.run_flow(flow, self.store)
+            self.creds = tools.run_flow(flow, self.store, noauth_local_webserver=True)
         self.service = build("calendar", "v3", http=self.creds.authorize(Http()))
 
     def main(self):

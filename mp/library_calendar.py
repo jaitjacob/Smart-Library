@@ -50,7 +50,8 @@ class LibraryCalendar:
     def insert(self, lmsuserid: int, bookid: int, title: str, author: str):
         today = datetime.now()
         due_date = (today + timedelta(days = 14)).strftime("%Y-%m-%d")
-        time_start = "{}T06:00:00+10:00".format(today)
+        today_date = today.strftime("%Y-%m-%d")
+        time_start = "{}T06:00:00+10:00".format(today_date)
         time_end = "{}T17:00:00+10:00".format(due_date)
         event = {
             "summary": "Return Book: [" + str(bookid) + "] " + title + " - " + author,

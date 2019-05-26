@@ -29,3 +29,10 @@ class Server:
             publisheddates.append(row[3])
 
         return bookids, titles, authors, publisheddates
+
+    def borrow_book(self, bookid: int):
+        if self.clouddb.check_book(bookid):
+            self.clouddb.borrow_book(bookid)
+            return True
+        else:
+            return False

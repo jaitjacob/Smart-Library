@@ -23,6 +23,15 @@ class CloudDB:
     def __exit__(self, type, value, traceback):
         self.close()
 
+    def check_book(self, bookid: int):
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT * "
+                           "FROM BookBorrowed "
+                           "WHERE BookID = %s AND Status = 'borrowed'", (bookid, ))
+
+            return cursor.rowcount == 0
+
+
     def search_available(self, title: str, author: str):
         with self.connection.cursor() as cursor:
             cursor.execute("SELECT * FROM Book WHERE BookID NOT IN ( "

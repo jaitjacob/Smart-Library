@@ -38,7 +38,14 @@ class ServerMenu:
         input("Press any key to return to the main menu")
 
     def borrow_book(self):
-        print("To be implemented")
+        bookid = input("Please enter the book id you wish to borrow: ")
+
+        if self.server.borrow_book(bookid):
+            print("Book succesfully borrowed")
+        else:
+            print("Book already borrowed, please return first")
+
+        input("Press any key to return to the main menu")
 
     def return_book(self):
         print("To be implemented")

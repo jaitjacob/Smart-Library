@@ -59,5 +59,5 @@ class CloudDB:
 
 db = CloudDB()
 
-for row in db.search_available("Transmission", "", ""):
+for row in db.search_available("Transmission", ""):
     print(row)

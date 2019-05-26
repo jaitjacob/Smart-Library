@@ -67,7 +67,7 @@ class Menu:
                     conn = ClientConnection(('127.0.0.1', 64010))
                     with conn as s:
                     #conn.__enter__() executes: connection open
-                        s.send(b'')
+                        s.send(username)
     
 
                     break

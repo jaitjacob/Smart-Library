@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Calendar Docs &#8212; smart_library 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Client IO Docs" href="client_io.html" />
+    <link rel="prev" title="Book Docs" href="book.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-calendar">
+<span id="calendar-docs"></span><h1>Calendar Docs<a class="headerlink" href="#module-calendar" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="calendar.Calendar">
+<em class="property">class </em><code class="descclassname">calendar.</code><code class="descname">Calendar</code><span class="sig-paren">(</span><em>firstweekday=0</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base calendar class. This class doesn’t do any formatting. It simply
+provides data to subclasses.</p>
+<dl class="method">
+<dt id="calendar.Calendar.itermonthdates">
+<code class="descname">itermonthdates</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.itermonthdates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator for one month. The iterator will yield datetime.date
+values and will always iterate through complete weeks, so it will yield
+dates outside the specified month.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.itermonthdays">
+<code class="descname">itermonthdays</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.itermonthdays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like itermonthdates(), but will yield day numbers. For days outside
+the specified month the day number is 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.itermonthdays2">
+<code class="descname">itermonthdays2</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.itermonthdays2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like itermonthdates(), but will yield (day number, weekday number)
+tuples. For days outside the specified month the day number is 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.itermonthdays3">
+<code class="descname">itermonthdays3</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.itermonthdays3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like itermonthdates(), but will yield (year, month, day) tuples.  Can be
+used for dates outside of datetime.date range.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.itermonthdays4">
+<code class="descname">itermonthdays4</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.itermonthdays4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Like itermonthdates(), but will yield (year, month, day, day_of_week) tuples.
+Can be used for dates outside of datetime.date range.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.iterweekdays">
+<code class="descname">iterweekdays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.iterweekdays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an iterator for one week of weekday numbers starting with the
+configured first one.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.monthdatescalendar">
+<code class="descname">monthdatescalendar</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.monthdatescalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a matrix (list of lists) representing a month’s calendar.
+Each row represents a week; week entries are datetime.date values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.monthdays2calendar">
+<code class="descname">monthdays2calendar</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.monthdays2calendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a matrix representing a month’s calendar.
+Each row represents a week; week entries are
+(day number, weekday number) tuples. Day numbers outside this month
+are zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.monthdayscalendar">
+<code class="descname">monthdayscalendar</code><span class="sig-paren">(</span><em>year</em>, <em>month</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.monthdayscalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a matrix representing a month’s calendar.
+Each row represents a week; days outside this month are zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.yeardatescalendar">
+<code class="descname">yeardatescalendar</code><span class="sig-paren">(</span><em>year</em>, <em>width=3</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.yeardatescalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data for the specified year ready for formatting. The return
+value is a list of month rows. Each month row contains up to width months.
+Each month contains between 4 and 6 weeks and each week contains 1-7
+days. Days are datetime.date objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.yeardays2calendar">
+<code class="descname">yeardays2calendar</code><span class="sig-paren">(</span><em>year</em>, <em>width=3</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.yeardays2calendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data for the specified year ready for formatting (similar to
+yeardatescalendar()). Entries in the week lists are
+(day number, weekday number) tuples. Day numbers outside this month are
+zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="calendar.Calendar.yeardayscalendar">
+<code class="descname">yeardayscalendar</code><span class="sig-paren">(</span><em>year</em>, <em>width=3</em><span class="sig-paren">)</span><a class="headerlink" href="#calendar.Calendar.yeardayscalendar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the data for the specified year ready for formatting (similar to
+yeardatescalendar()). Entries in the week lists are day numbers.
+Day numbers outside this month are zero.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">smart_library</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book.html">Book Docs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Calendar Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_io.html">Client IO Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ClientConnection.html">ClientConnection Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_menu.html">Client Menu Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faceid.html">Face ID Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server_on_MasterPi.html">Server On Master Pi Docs</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="book.html" title="previous chapter">Book Docs</a></li>
+      <li>Next: <a href="client_io.html" title="next chapter">Client IO Docs</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Luke Clifopoulos.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/calendar.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

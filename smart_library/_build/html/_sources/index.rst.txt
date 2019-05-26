@@ -11,9 +11,12 @@ Welcome to smart_library's documentation!
    :caption: Contents:
 
    authentication
+   book
+   calendar
    client_io
    ClientConnection
    client_menu
+   clouddb
    database
    faceid
    server_on_MasterPi

@@ -47,15 +47,15 @@ class Calendar:
             start = event["start"].get("dateTime", event["start"].get("date"))
             print(start, event["summary"])
 
-    def insert(self, lmsuserid: str, bookid: str, title: str, author: str):
+    def insert(self, lmsuserid: int, bookid: int, title: str, author: str):
         today = datetime.now()
         due_date = (today + timedelta(days = 14)).strftime("%Y-%m-%d")
         time_start = "{}T06:00:00+10:00".format(today)
         time_end = "{}T17:00:00+10:00".format(due_date)
         event = {
-            "summary": "Return Book: [" + bookid + "] " + title + " - " + author,
+            "summary": "Return Book: [" + str(bookid) + "] " + title + " - " + author,
             "location": "PIOT Smart Library",
-            "description": "Borrower ID: " + lmsuserid,
+            "description": "Borrower ID: " + str(lmsuserid),
             "start": {
                 "dateTime": time_start,
                 "timeZone": "Australia/Melbourne",

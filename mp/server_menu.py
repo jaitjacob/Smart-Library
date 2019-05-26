@@ -35,6 +35,8 @@ class ServerMenu:
             if i == 0:
                 print('-' * len(line))
 
+        input("Press any key to return to the main menu")
+
     def borrow_book(self):
         print("To be implemented")
 

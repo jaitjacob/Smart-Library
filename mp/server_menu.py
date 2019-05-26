@@ -61,4 +61,5 @@ class ServerMenu:
 
 
 if __name__ == "__main__":
-    master = ServerMenu('bhan')
+    username = input("Enter username: ")
+    master = ServerMenu(username)

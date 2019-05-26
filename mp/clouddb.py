@@ -63,7 +63,7 @@ class CloudDB:
 
     def add_lmsuser(self, username: str, name: str):
         with self.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO LmsUser (UserName, Name "
+            cursor.execute("INSERT INTO LmsUser (UserName, Name) "
                            "VALUES (%s, %s)", (username, name))
             self.connection.commit()
 

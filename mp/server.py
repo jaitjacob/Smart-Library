@@ -32,7 +32,7 @@ class Server:
 
     def borrow_book(self, bookid: int):
         if self.clouddb.check_book(bookid):
-            self.clouddb.borrow_book(bookid)
+            self.clouddb.borrow_book(self.user.get_lmsuserid(), bookid)
             return True
         else:
             return False

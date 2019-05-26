@@ -41,23 +41,29 @@ class CloudDB:
         borrowdate = datetime.today()
 
         with self.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO BookBorrowed (LmsUserID, BookID, Status, BorrowedDate)"
-                           "VALUES (%s, %s, %s, %s", (userid, bookid, 'borrowed', borrowdate.strftime("%Y-%m-%d")))
-            return cursor.fetchall()
+            cursor.execute("INSERT INTO BookBorrowed (LmsUserID, BookID, Status, BorrowedDate) "
+                           "VALUES (%s, %s, %s, %s)", (userid, bookid, 'borrowed', borrowdate.strftime("%Y-%m-%d")))
+            self.connection.commit()
+
+            return cursor.rowcount == 1
 
     def return_book(self, bookid: int):
         returndate = datetime.today()
 
         with self.connection.cursor() as cursor:
-            cursor.execute("UPDATE "
-                           "SET Status = %s, ReturnedDate %s "
+            cursor.execute("UPDATE BookBorrowed "
+                           "SET Status = %s, ReturnedDate = %s "
                            "WHERE BookID = %s", ('returned', returndate.strftime("%Y-%m-%d"), bookid))
-            return cursor.fetchall()
+            self.connection.commit()
+
+            return cursor.rowcount == 1
 
 
 
 
 db = CloudDB()
 
-for row in db.search_available("Transmission", ""):
+db.borrow_book(1, 371)
+
+for row in db.search_available("", ""):
     print(row)

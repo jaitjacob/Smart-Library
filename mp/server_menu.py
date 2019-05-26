@@ -10,12 +10,10 @@ class ServerMenu:
         function_item_search = FunctionItem("Search a book", self.search_book)
         function_item_borrow = FunctionItem("Borrow a book", self.borrow_book)
         function_item_return = FunctionItem("Return a book", self.return_book)
-        function_item_logout = FunctionItem("Logout", self.logout)
 
         self.menu.append_item(function_item_search)
         self.menu.append_item(function_item_borrow)
         self.menu.append_item(function_item_return)
-        self.menu.append_item(function_item_logout)
 
         self.menu.show()
 

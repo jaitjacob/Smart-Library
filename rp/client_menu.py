@@ -5,7 +5,7 @@ from consolemenu.items import *
 from authentication import Authentication
 from faceid import FaceID
 from user import User
-
+import ClientConnection
 
 class Menu:
     """
@@ -64,6 +64,12 @@ class Menu:
                 if self.authentication.login(username, password):
                     self.user = self.authentication.get_user(username)
                     print("Welcome " + self.user.getFirstname())
+                    conn = ClientConnection(('127.0.0.1', 64010))
+                    with conn as s:
+                    #conn.__enter__() executes: connection open
+                        s.send(b'')
+    
+
                     break
                 else:
                     attempts += 1

@@ -74,11 +74,3 @@ class CloudDB:
             cursor.execute("SELECT * FROM LmsUser "
                            "WHERE UserName = %s", (username, ))
             return cursor.fetchall()
-
-
-db = CloudDB()
-
-#db.add_lmsuser("bhan", "Brian")
-
-for row in db.get_lmsuser("bhan"):
-    print(row)

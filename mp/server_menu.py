@@ -46,4 +46,4 @@ class ServerMenu:
 
 
 if __name__ == "__main__":
-    master = ServerMenu()
+    master = ServerMenu('bhan')

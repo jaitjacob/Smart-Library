@@ -8,9 +8,10 @@ class Server:
         self.user = self.get_user(username)
 
     def get_user(self, username: str):
-        row = self.clouddb.get_lmsuser(username)
+        rows = self.clouddb.get_lmsuser(username)
 
-        return ServerUser(row[0], row[1], row[2])
+        for row in rows:
+            return ServerUser(row[0], row[1], row[2])
 
     def search_book(self, title: str, author: str):
 

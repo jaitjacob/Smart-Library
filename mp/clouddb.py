@@ -38,6 +38,9 @@ class CloudDB:
             return cursor.fetchall()
 
     def borrow_book(self, userid: int, bookid: int ):
+        # Return the book in case it was already borrowed and hadn't been properly returned
+        self.return_book(bookid)
+
         borrowdate = datetime.today()
 
         with self.connection.cursor() as cursor:
@@ -53,7 +56,7 @@ class CloudDB:
         with self.connection.cursor() as cursor:
             cursor.execute("UPDATE BookBorrowed "
                            "SET Status = %s, ReturnedDate = %s "
-                           "WHERE BookID = %s", ('returned', returndate.strftime("%Y-%m-%d"), bookid))
+                           "WHERE BookID = %s AND Status = 'borrowed'", ('returned', returndate.strftime("%Y-%m-%d"), bookid))
             self.connection.commit()
 
             return cursor.rowcount == 1

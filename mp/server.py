@@ -5,13 +5,16 @@ from server_user import ServerUser
 class Server:
     def __init__(self, username: str):
         self.clouddb = CloudDB()
-        self.user = self.get_user(username)
+        self.user = self.find_user(username)
 
-    def get_user(self, username: str):
+    def find_user(self, username: str):
         rows = self.clouddb.get_lmsuser(username)
 
         for row in rows:
             return ServerUser(row[0], row[1], row[2])
+
+    def get_user(self):
+        return self.user
 
     def search_book(self, title: str, author: str):
 

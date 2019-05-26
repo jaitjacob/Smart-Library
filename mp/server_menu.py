@@ -1,12 +1,13 @@
 from consolemenu import *
 from consolemenu.items import *
 from server import Server
+from server_user import ServerUser
 
 
 class ServerMenu:
     def __init__(self, username: str):
         self.server = Server(username)
-        self.menu = ConsoleMenu("Library Management System", "Master")
+        self.menu = ConsoleMenu("Library Management System - " + self.server.get_user().get_name(), "Master")
         function_item_search = FunctionItem("Search a book", self.search_book)
         function_item_borrow = FunctionItem("Borrow a book", self.borrow_book)
         function_item_return = FunctionItem("Return a book", self.return_book)

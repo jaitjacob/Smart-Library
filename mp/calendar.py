@@ -13,16 +13,19 @@ from datetime import timedelta
 from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
+import argparse
 
 class Calendar:
     def __init__(self):
+        parser = argparse.ArgumentParser(parents=[tools.argparser])
+        flags = parser.parse_args(['--noauth_local_webserver'])
         # If modifying these scopes, delete the file token.json.
         self.SCOPES = "https://www.googleapis.com/auth/calendar"
         self.store = file.Storage("token.json")
         self.creds = self.store.get()
         if(not self.creds or self.creds.invalid):
             flow = client.flow_from_clientsecrets("credentials.json", self.SCOPES)
-            self.creds = tools.run_flow(flow, self.store, noauth_local_webserver=True)
+            self.creds = tools.run_flow(flow, self.store, flags)
         self.service = build("calendar", "v3", http=self.creds.authorize(Http()))
 
     def main(self):

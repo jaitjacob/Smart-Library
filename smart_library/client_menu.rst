@@ -1,5 +1,5 @@
-Client Menu Docs
-================
+Client Menu Docs (RP)
+=====================
 
 .. module:: client_menu
 

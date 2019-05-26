@@ -1,5 +1,5 @@
-Face ID Docs
-============
+Face ID Docs (RP)
+=================
 
 .. module:: faceid
 

@@ -1,5 +1,5 @@
-Authentication Docs
-===================
+Authentication Docs (RP)
+========================
 
 .. module:: authentication
 

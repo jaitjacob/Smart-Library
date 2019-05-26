@@ -108,23 +108,24 @@ class Database:
 
         return password
 
-    def find_user(self, username: str):
+    def get_user(self, username: str):
         """
-        This function will find a user in the smart library database.
+        This function gets and returns a user and his/her details, using their unique username as the argument.
         """
         self.check_create_user_table()
 
         if not self.connected:
             self.connect()
 
-        self.cursor.execute("""SELECT COUNT(username) FROM user WHERE username = :username""",
+        self.cursor.execute("""SELECT * FROM user WHERE username = :username""",
                             {"username": username})
         for row in self.cursor:
-            if row[0] == 1:
-                found = True
-            else:
-                found = False
+            username = row[0]
+            first_name = row[1]
+            last_name = row[2]
+            email = row[3]
+            password = row[4]
 
         self.close()
 
-        return found
+        return username, first_name, last_name, email, password
